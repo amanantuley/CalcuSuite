@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 import { Eraser } from 'lucide-react';
 
 const calculatorButtonVariants = cva(
-  'text-lg md:text-xl h-14 w-full rounded-lg shadow-md transition-all duration-150 ease-in-out transform active:scale-95',
+  'text-lg md:text-xl h-12 md:h-14 w-full rounded-lg shadow-md transition-all duration-150 ease-in-out transform active:scale-95',
   {
     variants: {
       variant: {
@@ -132,8 +132,8 @@ export default function ScientificCalculator() {
 
   return (
     <div className="flex justify-center items-center h-full">
-      <Card className="w-full max-w-lg mx-auto shadow-2xl">
-        <CardContent className="p-4 md:p-6">
+      <Card className="w-full max-w-md mx-auto shadow-2xl">
+        <CardContent className="p-4">
           <div className="bg-background text-right p-4 rounded-lg mb-4 border shadow-inner">
             <div className="text-muted-foreground text-sm h-6 truncate" title={output}>{output}</div>
             <div className="text-foreground text-4xl font-bold break-all">{input}</div>
@@ -177,6 +177,8 @@ export default function ScientificCalculator() {
             <CalculatorButton variant="function" label="π" onClick={() => handleConstant('π')} />
             <CalculatorButton variant="function" label="e" onClick={() => handleConstant('e')} />
             <CalculatorButton variant="function" label="±" onClick={() => handleFunction('±')} />
+            <CalculatorButton variant="function" label="(" onClick={() => processInput('(')} />
+
           </div>
         </CardContent>
       </Card>

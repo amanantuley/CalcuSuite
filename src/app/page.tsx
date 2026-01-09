@@ -88,7 +88,7 @@ function Header({
 }: {
   activeCalculator: CalculatorId;
 }) {
-  const { toggleSidebar, isMobile } = useSidebar();
+  const { toggleSidebar } = useSidebar();
   const { label, icon: Icon } = calculatorModules[activeCalculator];
 
   return (
@@ -106,8 +106,8 @@ function Header({
         <Icon className="h-6 w-6 text-primary" />
         <h1 className="text-lg font-semibold md:text-xl">{label} Calculator</h1>
       </div>
-      <div className="ml-auto">
-        {!isMobile && <ThemeToggle />}
+      <div className="ml-auto flex items-center gap-2">
+        <ThemeToggle />
       </div>
     </header>
   );
@@ -156,7 +156,7 @@ export default function Home() {
             })}
           </SidebarMenu>
         </SidebarContent>
-        <SidebarFooter className="flex-row items-center border-t p-2 md:flex">
+        <SidebarFooter className="hidden md:flex flex-row items-center border-t p-2">
            <ThemeToggle />
         </SidebarFooter>
       </Sidebar>

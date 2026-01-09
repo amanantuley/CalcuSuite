@@ -168,17 +168,17 @@ export default function BasicCalculator() {
 
   return (
     <div className="flex justify-center items-center h-full">
-      <Card className="w-full max-w-md mx-auto shadow-2xl">
-        <CardContent className="p-4 md:p-6">
+      <Card className="w-full max-w-sm mx-auto shadow-2xl">
+        <CardContent className="p-4">
           <div className="bg-background text-right p-4 rounded-lg mb-4 border shadow-inner">
             <div className="text-muted-foreground text-sm h-6 truncate" title={output}>
               {output}
             </div>
-            <div className="text-foreground text-4xl md:text-5xl font-bold break-all">
+            <div className="text-foreground text-4xl font-bold break-all">
               {input}
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-2 md:gap-4">
+          <div className="grid grid-cols-4 gap-2">
             <CalculatorButton variant="action" label="AC" onClick={clearAll} className="col-span-2" />
             <CalculatorButton variant="action" label={<Eraser />} onClick={backspace} />
             <CalculatorButton variant="operator" label="÷" onClick={() => handleOperation('÷')} />
